@@ -50,9 +50,16 @@ function createSupabaseFromNextPublicEnv() {
   const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").trim();
   const supabaseAnonKey = (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "").trim();
   if (!supabaseUrl || !supabaseAnonKey) {
-    throw new Error(
-      "Faltan NEXT_PUBLIC_SUPABASE_URL o NEXT_PUBLIC_SUPABASE_ANON_KEY en apps/master-web/.env.local. Guardá el archivo y reiniciá `npm run dev:master-web`.",
-    );
+    /* Dev: fallar explícito. Prod/build (p. ej. Vercel sin env todavía): cliente dummy para que `next build` no reviente; la app no funcionará hasta configurar las vars en el dashboard. */
+    if (process.env.NODE_ENV !== "production") {
+      throw new Error(
+        "Faltan NEXT_PUBLIC_SUPABASE_URL o NEXT_PUBLIC_SUPABASE_ANON_KEY en apps/master-web/.env.local. Guardá el archivo y reiniciá `npm run dev:master-web`.",
+      );
+    }
+    return createBrowserSupabaseClient({
+      supabaseUrl: "https://placeholder.invalid",
+      supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.placeholder",
+    });
   }
   return createBrowserSupabaseClient({ supabaseUrl, supabaseAnonKey });
 }
