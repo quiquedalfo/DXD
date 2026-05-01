@@ -1,0 +1,24 @@
+{
+  "name": "dxd-online",
+  "private": true,
+  "packageManager": "npm@10.8.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck -w @dxd/shared",
+    "typecheck:all": "npm run build:shared && npm run typecheck -w @dxd/shared && npm run typecheck -w @dxd/master-web && npm run typecheck -w @dxd/mobile",
+    "lint": "echo \"Add eslint when apps are scaffolded\"",
+    "smoke": "node scripts/e2e-supabase-smoke-flow.mjs",
+    "test:resolve-check": "npm run build:shared && node scripts/assert-resolve-check.mjs && node scripts/assert-resolve-check.mjs",
+    "test:quick": "npm run test:resolve-check",
+    "seed:fish": "node scripts/seed-fish-characters.mjs",
+    "build:shared": "npm run build -w @dxd/shared",
+    "dev:master-web": "npm run build -w @dxd/shared && npm run dev -w @dxd/master-web",
+    "dev:mobile": "npm run build -w @dxd/shared && cd apps/mobile && npm run start"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.49.0"
+  }
+}

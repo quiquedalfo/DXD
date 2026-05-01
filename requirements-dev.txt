@@ -1,0 +1,2 @@
+# Desarrollo: live reload (vigilar archivos y reiniciar la app)
+watchdog>=4.0.0

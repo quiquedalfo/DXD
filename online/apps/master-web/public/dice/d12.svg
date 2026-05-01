@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6f6;
+        font-family: CourierNewPSMT, 'Courier New';
+        font-size: 20px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #6f6;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <polygon class="cls-3" points="58.97 22.27 41.03 22.27 26.51 32.82 20.96 49.89 26.51 66.96 41.03 77.5 58.97 77.5 73.49 66.96 79.04 49.89 73.49 32.82 58.97 22.27"/>
+        <text class="cls-1" transform="translate(32 56)"><tspan x="0" y="0">d12</tspan></text>
+      </g>
+      <rect class="cls-2" width="100" height="100"/>
+    </g>
+  </g>
+</svg>

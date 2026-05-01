@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "DXD Jugador",
+    "slug": "dxd-player",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "scheme": "dxd",
+    "platforms": ["ios", "android"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dxd.player"
+    },
+    "android": {
+      "package": "com.dxd.player"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "sounds": ["./assets/sounds/HXH Notificacion.mp3"]
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "La app usa la foto que elijas como retrato del personaje.",
+          "microphonePermission": false
+        }
+      ]
+    ]
+  }
+}

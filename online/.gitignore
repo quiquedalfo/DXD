@@ -1,0 +1,13 @@
+.env
+.env.local
+node_modules
+dist
+.expo/
+
+# Artefactos locales de apps (por si el ignore del subpaquete no aplica)
+apps/master-web/.next/
+apps/master-web/out/
+apps/mobile/.expo/
+apps/mobile/dist/
+*.log
+npm-debug.log*
